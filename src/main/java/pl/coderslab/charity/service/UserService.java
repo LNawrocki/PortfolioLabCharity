@@ -7,5 +7,4 @@ import java.security.Principal;
 public interface UserService {
 
     User getUserByEmail(String email);
-//    String getName();
 }

@@ -11,4 +11,8 @@ public interface DonationService {
     List<Donation> findAll();
 
     Integer numberOfGifts();
+
+    List<Donation> findDonationsByInstitution_Id(Integer id);
+
+    void deleteDonation(Donation donation);
 }

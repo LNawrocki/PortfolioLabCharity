@@ -87,7 +87,7 @@
                     <div class="title">${institution.name}</div>
                     <div class="subtitle">${institution.description}</div>
                     <div>
-                        <form action="/admin/institution/edit" method="post" style="padding: 1px; margin: 1px">
+                        <form action="/admin/institution/edit" method="get" style="padding: 1px; margin: 1px">
                             <button class="btn" name="institutionId" value="${institution.id}"
                                     style="font-size: small; border-radius: 5px; border-width: 1px; color: limegreen">
                                 Edytuj
@@ -109,12 +109,11 @@
                 <li>
                     <div class="col">
                         <div class="title">
-                            <input type="text" name="name" placeholder="Nazwa" value='${institutionById.name}'/>
+                            <input type="text" name="name" placeholder="Nazwa" value="${institutionById.name}"/>
                         </div>
                         <div class="title">
                             <input type="text" name="description" value="${institutionById.description}" placeholder="Opis" size="60"
                                    value="Cel i misja: "/>
-                            <input type="number" name="institutionId" value="${institutionById.id}" hidden="hidden"/>
                         </div>
                         <div class="subtitle">
                             <button class="btn" type="submit">Dodaj</button>

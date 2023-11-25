@@ -20,27 +20,4 @@ public class LoginController {
     public String getLoginView() {
         return "login";
     }
-
-//    private final UserService userService;
-//
-//    @GetMapping("/login")
-//    public String loginView(Model model, HttpSession session) {
-//        model.addAttribute("msg", session.getAttribute("msg"));
-//        return "login";
-//    }
-//
-//    @PostMapping("/login")
-//    public String login(@RequestParam String username,
-//                        @RequestParam String password,
-//                        Model model) {
-//
-//        if (Optional.of(userService.getUserByEmail(username)).isPresent()) {
-//            User userByEmail = userService.getUserByEmail(username);
-//             if (BCrypt.checkpw(password, userByEmail.getPassword())){
-//                 return "user-home";
-//             }
-//        }
-//        model.addAttribute("msg", "Błąd logowania, spróbuj ponownie");
-//        return "/login";
-//    }
 }

@@ -36,8 +36,7 @@ public class UserController {
         model.addAttribute("bags", donationService.findAll().stream().count());
         model.addAttribute("gifts", donationService.numberOfGifts());
 
-//        model.addAttribute("username", userService.getUserName());
-//        model.addAttribute("username", userService.getName());
+
         model.addAttribute("username", principal.getName());
         return "user-home";
     }

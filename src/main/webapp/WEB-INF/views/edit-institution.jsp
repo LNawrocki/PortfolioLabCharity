@@ -13,24 +13,22 @@
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
 </head>
 <body>
-<jsp:include page="fragments/header.jsp"/>
+<jsp:include page="fragments/admin-header.jsp"/>
 
 <section class="login-page">
-    <h2>Zaloguj się</h2>
-    <form method="post">
-        <div class="form-group">
-            <input type="username" name="username" placeholder="Email"/>
-            ${msg}
-        </div>
-        <div class="form-group">
-            <input type="password" name="password" placeholder="Hasło"/>
-            <a href="#" class="btn btn--small btn--without-border reset-password">Przypomnij hasło</a>
-        </div>
+    <h2>Edytuj instytucję</h2>
+    <form:form method="post">
+            <div class="edit">
+                <input type="text" name="name" value="${institution.name}" width="150" />
+            </div>
+            <div class="edit">
+                <input name="description" value="${institution.description}"/>
+                <input type="text" name="id" value="${institution.id}" hidden="hidden">
+            </div>
         <div class="form-group form-group--buttons">
-            <a href="/register" class="btn btn--without-border">Załóż konto</a>
-            <button class="btn" type="submit">Zaloguj się</button>
+            <button class="btn" type="submit">Zatwierdź</button>
         </div>
-    </form>
+    </form:form>
 </section>
 <footer>
     <div id="contact" class="contact">

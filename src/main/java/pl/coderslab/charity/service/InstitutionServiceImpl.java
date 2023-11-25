@@ -33,4 +33,9 @@ public class InstitutionServiceImpl implements InstitutionService{
     public void delete(Integer id) {
        institutionRepository.deleteById(id);
     }
+
+    @Override
+    public Institution get(Integer institutionId){
+        return institutionRepository.getInstitutionById(institutionId);
+    }
 }

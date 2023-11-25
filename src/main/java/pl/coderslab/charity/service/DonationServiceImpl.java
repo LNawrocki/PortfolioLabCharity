@@ -23,6 +23,7 @@ public class DonationServiceImpl implements DonationService {
         return donationRepository.findAll();
     }
 
+    @Override
     public Integer numberOfGifts() {
         List<Donation> donationsList = donationRepository.findAll();
         Integer giftsQty = 0;
@@ -32,4 +33,15 @@ public class DonationServiceImpl implements DonationService {
         }
         return giftsQty;
     }
+
+    @Override
+    public List<Donation> findDonationsByInstitution_Id(Integer id) {
+        return donationRepository.findDonationsByInstitution_Id(id);
+    }
+
+    @Override
+    public void deleteDonation(Donation donation) {
+        donationRepository.delete(donation);
+    }
+
 }

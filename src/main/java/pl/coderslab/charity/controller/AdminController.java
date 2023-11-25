@@ -18,7 +18,7 @@ public class AdminController {
     private final InstitutionService institutionService;
     private final DonationService donationService;
 
-    @GetMapping("home")
+    @GetMapping("/home")
     public String adminHome(Model model){
         model.addAttribute("institutions", institutionService.findAll());
         model.addAttribute("bags", donationService.findAll().stream().count());
