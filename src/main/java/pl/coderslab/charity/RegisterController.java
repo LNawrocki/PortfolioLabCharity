@@ -76,7 +76,7 @@ public class RegisterController {
             emailDetails.setRecipient(user.getEmail());
             String link = "http://localhost8080/register/activation?UuId=" + UuId;
             emailDetails.setMsgBody(link);
-            emailService.sendSimpleMail(emailDetails);
+//            emailService.sendSimpleMail(emailDetails);
             return "redirect:/login";
         }
         model.addAttribute("msg", "Hasła muszą być takie same");
