@@ -15,7 +15,7 @@
 <body>
 <jsp:include page="fragments/header.jsp"/>
 
-<section class="login-page">
+<section id="login" class="login-page">
     <h2>Zaloguj się</h2>
     <form method="post">
         <div class="form-group">

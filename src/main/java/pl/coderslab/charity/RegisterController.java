@@ -2,27 +2,21 @@ package pl.coderslab.charity;
 
 import lombok.AllArgsConstructor;
 import org.mindrot.jbcrypt.BCrypt;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import pl.coderslab.charity.email.EmailDetails;
 import pl.coderslab.charity.email.EmailService;
 import pl.coderslab.charity.user.User;
 import pl.coderslab.charity.user.UserRepository;
-
 import javax.validation.Valid;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.UUID;
 
-import static com.fasterxml.jackson.databind.type.LogicalType.DateTime;
 
 @Controller
 @AllArgsConstructor
