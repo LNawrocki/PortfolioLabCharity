@@ -1,7 +1,6 @@
-package pl.coderslab.charity.repository;
+package pl.coderslab.charity.donation;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.coderslab.charity.entity.Donation;
 
 import java.util.List;
 

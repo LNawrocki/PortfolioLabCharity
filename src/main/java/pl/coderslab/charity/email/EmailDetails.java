@@ -1,9 +1,11 @@
-package pl.coderslab.charity;
+package pl.coderslab.charity.email;
 
 // Importing required classes
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.UUID;
 
 // Annotations
 @Data
@@ -17,5 +19,8 @@ public class EmailDetails {
     private String recipient;
     private String msgBody;
     private String subject;
-//    private String attachment;
+    private String attachment = null;
+
+
+
 }

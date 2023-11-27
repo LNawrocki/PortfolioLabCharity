@@ -1,9 +1,7 @@
-package pl.coderslab.charity.service;
+package pl.coderslab.charity.user;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import pl.coderslab.charity.entity.User;
-import pl.coderslab.charity.repository.UserRepository;
 
 @Service
 @AllArgsConstructor
@@ -14,5 +12,10 @@ public class UserServiceImpl implements UserService{
     @Override
     public User getUserByEmail(String email) {
         return userRepository.getUserByEmail(email);
+    }
+
+    @Override
+    public User getUserByUuid(String uuId) {
+        return userRepository.getUserByUuId(uuId);
     }
 }

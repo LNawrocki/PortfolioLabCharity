@@ -1,6 +1,4 @@
-package pl.coderslab.charity.service;
-
-import pl.coderslab.charity.entity.Donation;
+package pl.coderslab.charity.donation;
 
 import java.util.List;
 

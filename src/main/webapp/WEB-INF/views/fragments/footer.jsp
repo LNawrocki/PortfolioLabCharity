@@ -8,7 +8,7 @@
             <div class="form-group form-group--50"><input type="text" name="name" placeholder="Imię" /></div>
             <div class="form-group form-group--50"><input type="text" name="surname" placeholder="Nazwisko" /></div>
 
-            <div class="form-group"><textarea name="message" placeholder="Wiadomość" rows="1"></textarea></div>
+            <div class="form-group"><textarea name="message" placeholder="Wiadomość" rows="5" cols="15"></textarea></div>
 
             <button class="btn" type="submit">Wyślij</button>
         </form>

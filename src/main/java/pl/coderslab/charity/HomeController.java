@@ -4,14 +4,13 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import pl.coderslab.charity.entity.Donation;
-import pl.coderslab.charity.repository.DonationRepository;
-import pl.coderslab.charity.repository.InstitutionRepository;
-import pl.coderslab.charity.service.DonationService;
-import pl.coderslab.charity.service.InstitutionService;
+import pl.coderslab.charity.donation.DonationService;
+import pl.coderslab.charity.institution.InstitutionService;
 
-import java.util.List;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.UUID;
 
 
 @Controller
@@ -20,12 +19,14 @@ public class HomeController {
 
     private final InstitutionService institutionService;
     private final DonationService donationService;
+//    private final EmailService emailService;
 
     @GetMapping("/")
     public String homeView(Model model){
         model.addAttribute("institutions", institutionService.findAll());
         model.addAttribute("bags", donationService.findAll().stream().count());
         model.addAttribute("gifts", donationService.numberOfGifts());
+
         return "home";
     }
 }

@@ -1,4 +1,4 @@
-package pl.coderslab.charity.controller;
+package pl.coderslab.charity.admin;
 
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.coderslab.charity.service.DonationService;
-import pl.coderslab.charity.service.InstitutionService;
+import pl.coderslab.charity.donation.DonationService;
+import pl.coderslab.charity.institution.InstitutionService;
 
 @Controller
 @AllArgsConstructor

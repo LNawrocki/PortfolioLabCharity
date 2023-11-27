@@ -6,8 +6,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import pl.coderslab.charity.entity.User;
-import pl.coderslab.charity.repository.UserRepository;
+import pl.coderslab.charity.user.User;
+import pl.coderslab.charity.user.UserRepository;
 
 import java.util.Set;
 

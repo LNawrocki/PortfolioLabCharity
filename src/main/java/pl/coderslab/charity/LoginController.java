@@ -1,15 +1,8 @@
-package pl.coderslab.charity.controller;
+package pl.coderslab.charity;
 
 import lombok.AllArgsConstructor;
-import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pl.coderslab.charity.entity.User;
-import pl.coderslab.charity.service.UserService;
-
-import javax.servlet.http.HttpSession;
-import java.util.Optional;
 
 @Controller
 @AllArgsConstructor

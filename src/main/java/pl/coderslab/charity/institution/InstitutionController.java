@@ -1,4 +1,4 @@
-package pl.coderslab.charity.controller;
+package pl.coderslab.charity.institution;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -7,10 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import pl.coderslab.charity.entity.Donation;
-import pl.coderslab.charity.entity.Institution;
-import pl.coderslab.charity.service.DonationService;
-import pl.coderslab.charity.service.InstitutionService;
+import pl.coderslab.charity.donation.Donation;
+import pl.coderslab.charity.donation.DonationService;
 
 import java.util.List;
 

@@ -15,18 +15,18 @@
 <body>
 <jsp:include page="fragments/header.jsp"/>
 
-<section class="login-page">
+<section id="register" class="login-page">
     <h2>Załóż konto</h2>
     <form:form method="post" modelAttribute="user">
         <div class="form-group">
             <form:input type="email" path="email" placeholder="Email"/><form:errors path="email" />
+                ${msg}
         </div>
         <div class="form-group">
             <form:input path="password" placeholder="Hasło" minlength="4"/><form:errors path="password" />
         </div>
         <div class="form-group">
             <input id="password2" type="password" name="password2" placeholder="Powtórz hasło"/>
-            ${msg}
         </div>
         <div class="form-group form-group--buttons">
             <a href="login.jsp" class="btn btn--without-border">Zaloguj się</a>

@@ -1,14 +1,12 @@
-package pl.coderslab.charity.controller;
+package pl.coderslab.charity.donation;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import pl.coderslab.charity.entity.Donation;
-import pl.coderslab.charity.service.CategoryService;
-import pl.coderslab.charity.service.DonationService;
-import pl.coderslab.charity.service.InstitutionService;
+import pl.coderslab.charity.category.CategoryService;
+import pl.coderslab.charity.institution.InstitutionService;
 
 
 @Controller

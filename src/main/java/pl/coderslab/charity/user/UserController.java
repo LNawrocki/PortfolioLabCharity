@@ -1,20 +1,14 @@
-package pl.coderslab.charity.controller;
+package pl.coderslab.charity.user;
 
 import lombok.AllArgsConstructor;
-import org.springframework.boot.SpringBootVersion;
-import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.coderslab.charity.entity.Donation;
-import pl.coderslab.charity.service.CategoryService;
-import pl.coderslab.charity.service.DonationService;
-import pl.coderslab.charity.service.InstitutionService;
-import pl.coderslab.charity.service.UserService;
+import pl.coderslab.charity.donation.Donation;
+import pl.coderslab.charity.category.CategoryService;
+import pl.coderslab.charity.donation.DonationService;
+import pl.coderslab.charity.institution.InstitutionService;
 
 import java.security.Principal;
 

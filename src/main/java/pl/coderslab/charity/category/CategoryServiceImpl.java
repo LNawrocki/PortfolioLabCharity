@@ -1,9 +1,7 @@
-package pl.coderslab.charity.service;
+package pl.coderslab.charity.category;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import pl.coderslab.charity.entity.Category;
-import pl.coderslab.charity.repository.CategoryRepository;
 
 import java.util.List;
 

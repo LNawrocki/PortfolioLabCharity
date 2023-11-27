@@ -1,11 +1,16 @@
-package pl.coderslab.charity.entity;
+package pl.coderslab.charity.user;
 
 import lombok.Data;
+import org.apache.tomcat.jni.Local;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 @Entity
 @Data
@@ -22,9 +27,15 @@ public class User {
     @Size(min = 4)
     private String password;
     @Column(nullable = false)
-    private String role;
+    private String role = "ROLE_USER";
     @Column(nullable = false)
     private Boolean active = false;
+    @Column(name = "uuid")
+    private String uuId;
+    @Column(name = "uuid_expiration_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate uuIdExpirationDate;
+
 
     @Override
     public String toString() {
