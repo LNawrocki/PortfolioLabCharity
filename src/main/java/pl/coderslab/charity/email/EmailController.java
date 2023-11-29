@@ -18,6 +18,8 @@ public class EmailController {
     // Sending a simple Email
     @PostMapping("/sendMail")
     public String sendMail(EmailDetails emailDetails, String name, String surname,String message) {
+
+//        TODO: przenieść do serwisu
         emailDetails.setRecipient("test@lightnet.eu");
         emailDetails.setSubject("Wiadomość ze strony głownej Charity" + " - " + name + " " + surname);
         emailDetails.setMsgBody(message);
