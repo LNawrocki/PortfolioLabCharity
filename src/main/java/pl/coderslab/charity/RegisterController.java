@@ -12,6 +12,8 @@ import pl.coderslab.charity.email.EmailDetails;
 import pl.coderslab.charity.email.EmailService;
 import pl.coderslab.charity.user.User;
 import pl.coderslab.charity.user.UserRepository;
+import pl.coderslab.charity.user.UserService;
+
 import javax.validation.Valid;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -22,27 +24,15 @@ import java.util.UUID;
 @AllArgsConstructor
 public class RegisterController {
 
-    private final UserRepository userService;
+    private final UserService userService;
     private final EmailService emailService;
 
 
     @GetMapping("/register")
-    public String registerView(Model model){
+    public String registerView(Model model) {
         model.addAttribute("user", new User());
         return "register";
     }
-
-//    @PostMapping("/register")
-//    public String processRegistrationForm(@Valid User user, BindingResult bindingResult) {
-//        if (bindingResult.hasErrors()) {
-//            return "/register";
-//        }
-//        user.setPassword(passwordEncoder.encode(user.getPassword()));
-//        user.setRole("USER");
-//        user.setActive(true);
-//        userService.save(user);
-//        return "redirect:/login";
-//    }
 
 
     @PostMapping("/register")
@@ -50,27 +40,20 @@ public class RegisterController {
                            @RequestParam String password,
                            @RequestParam String password2,
                            EmailDetails emailDetails,
-                           Model model){
+                           Model model) {
 
-//        System.out.println(bindingResult);
-        if (bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
             return "register";
         }
         if (userService.getUserByEmail(user.getEmail()) != null) {
             model.addAttribute("msg", "Użytkownik o podanym adresie e-mail już istnieje");
             return "register";
         }
-        if (password.equals(password2)){
-            user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
-            String UuId = UUID.randomUUID().toString().toUpperCase().replace("-","");
-            user.setUuId(UuId);
-            user.setUuIdExpirationDate(LocalDate.now(ZoneId.of("Europe/Warsaw")).plusDays(1));
+        if (password.equals(password2)) {
+            String uuid = UUID.randomUUID().toString().toUpperCase().replace("-", "");
+            userService.userDataToSave(user, password, uuid);
             userService.save(user);
-            emailDetails.setSubject("Activation link");
-            emailDetails.setRecipient(user.getEmail());
-            String link = "http://localhost8080/register/activation?UuId=" + UuId;
-            emailDetails.setMsgBody(link);
-//            emailService.sendSimpleMail(emailDetails);
+            emailService.sendActivationEmail(user.getEmail(), uuid);
             return "redirect:/login";
         }
         model.addAttribute("msg", "Hasła muszą być takie same");
@@ -78,15 +61,17 @@ public class RegisterController {
     }
 
     @GetMapping("/register/activation")
-    public String activation(@RequestParam(value = "UuId") String UuId){
-        User user = userService.getUserByUuId(UuId);
-        if(user == null) {
+    public String activation(@RequestParam(value = "uuid") String uuid) {
+        User user = userService.getUserByUuid(uuid);
+        if (user == null) {
+            return "redirect:/";
+        } else if (user.getUuIdExpirationDate().isBefore(LocalDate.now())) {
             return "redirect:/";
         } else {
             user.setActive(true);
             userService.save(user);
             return "redirect:/login";
         }
-
-    }
+   }
 }
+

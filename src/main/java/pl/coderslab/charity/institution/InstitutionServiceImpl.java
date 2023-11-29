@@ -16,7 +16,7 @@ public class InstitutionServiceImpl implements InstitutionService{
         return institutionRepository.findAll();
     }
 
-//    TODO - void czy Institution
+//    TODO - void czy Institution - Institution
     @Override
     public void save(Institution institution) {
         institutionRepository.save(institution);

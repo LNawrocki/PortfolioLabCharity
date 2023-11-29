@@ -21,7 +21,7 @@ public class EmailController {
         emailDetails.setRecipient("test@lightnet.eu");
         emailDetails.setSubject("Wiadomość ze strony głownej Charity" + " - " + name + " " + surname);
         emailDetails.setMsgBody(message);
-        String status = emailService.sendSimpleMail(emailDetails);
+        String status = emailService.sendMail(emailDetails);
 //        return status;
         return "redirect:/";
     }
