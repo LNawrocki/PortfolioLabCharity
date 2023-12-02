@@ -2,7 +2,7 @@
 
 #### Technologie
 - Java
-- SpringBoot
+- Spring Boot
 - MySQL
 - JSP, CSS
 - Maven
@@ -25,7 +25,7 @@ jakimi są:
 
 #### Technologies
 - Java
-- SpringBoot
+- Spring Boot
 - MySQL
 - JSP, CSS
 - Maven
