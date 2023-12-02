@@ -1,10 +1,42 @@
+# Przekazywanie darów - projekt treningowy
 
-Przed przystąpieniem do pracy  przeczytaj poniższe wskazówki.
-## Jak zacząć?
+#### Technologie
+- Java
+- SpringBoot
+- MySQL
+- JSP, CSS
+- Maven
+- Spring Security
+- Serwisy
+- aktywacja konta przez e-mail (uuid), obsługa funkcji e-mail, link aktywacyjny
 
-1. Zaimportuj projekt jako projekt `Maven`, wg poniższych wskazówek:
+### Opis
+Projekt dość często spotykany i znany w sieci. \
+Celem wykonania tego projektu było opanowanie kluczokych umiejętności używanych podczas programowania w języku Java, \
+jakimi są:
+- Spring Security
+- Funkcje e-mail
+- Aktywacja konta poprze link aktywacyjny
 
-	* W `IntelliJ` wybieramy: `File –> New –> Project from Existing Sources...`
-	* Wskazujemy lokalizację katalogu ze sklonowanym projektem i zatwierdzamy.
-	* Następnie w nowym oknie wybieramy: `Import project from external model` i wskazujemy `Maven`
-	* Wybieramy kolejno opcje: `Next –> Next –> Next –> Finish`
+
+
+
+# Donations - training project
+
+#### Technologies
+- Java
+- SpringBoot
+- MySQL
+- JSP, CSS
+- Maven
+- Spring Security
+- Services
+- account activation via e-mail (uuid), e-mail function support, activation link
+
+### Description
+The project is quite common and known on the Internet. \
+The aim of this project was to master key skills used when programming in Java, \
+which are:
+- Spring Security
+- Email functions
+- Activate your account via the activation link
