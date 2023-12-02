@@ -14,7 +14,6 @@ public class EmailController {
 
     private final EmailService emailService;
 
-    // Sending a simple Email
     @PostMapping("/sendMail")
     public String sendMail(EmailDetails emailDetails, String name, String surname,String message) {
 

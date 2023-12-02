@@ -14,7 +14,6 @@ import pl.coderslab.charity.user.UserService;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
-import java.util.UUID;
 
 
 @Controller
@@ -23,6 +22,7 @@ public class RegistrationController {
 
     private final UserService userService;
     private final EmailService emailService;
+    private final RegistrationService registrationService;
 
 
     @GetMapping("/register")
@@ -31,7 +31,6 @@ public class RegistrationController {
         return "register";
     }
 
-//TODO: registerservice
 
     @PostMapping("/register")
     public String register(@Valid User user, BindingResult bindingResult,
@@ -48,10 +47,7 @@ public class RegistrationController {
             return "register";
         }
         if (password.equals(password2)) {
-            String uuid = UUID.randomUUID().toString().toUpperCase().replace("-", "");
-            userService.userDataToSave(user, password, uuid);
-            userService.save(user);
-            emailService.sendActivationEmail(user.getEmail(), uuid);
+            registrationService.saveAndSendActivationLink(user, password);
             return "redirect:/login";
         }
         model.addAttribute("msg", "Hasła muszą być takie same");
@@ -60,16 +56,7 @@ public class RegistrationController {
 
     @GetMapping("/register/activation")
     public String activation(@RequestParam(value = "uuid") String uuid) {
-        User user = userService.getUserByUuid(uuid);
-        if (user == null) {
-            return "redirect:/";
-        } else if (user.getUuIdExpirationDate().isBefore(LocalDate.now())) {
-            return "redirect:/";
-        } else {
-            user.setActive(true);
-            userService.save(user);
-            return "redirect:/login";
-        }
+        return registrationService.accountActivation(uuid);
    }
 }
 
