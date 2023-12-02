@@ -1,4 +1,4 @@
-# Przekazywanie darów - projekt treningowy
+# Organiazcja chrytatywna - projekt treningowy
 
 #### Technologie
 - Java
@@ -21,7 +21,7 @@ jakimi są:
 
 
 
-# Donations - training project
+# Charity - training project
 
 #### Technologies
 - Java
