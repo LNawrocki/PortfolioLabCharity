@@ -11,8 +11,8 @@
 - aktywacja konta przez e-mail (uuid), obsługa funkcji e-mail, link aktywacyjny
 
 ### Opis
-Projekt dość często spotykany i znany w sieci. \
-Celem wykonania tego projektu było opanowanie kluczokych umiejętności używanych podczas programowania w języku Java, \
+Projekt dość często spotykany i znany w sieci.
+Celem wykonania tego projektu było opanowanie kluczokych umiejętności używanych podczas programowania w języku Java,
 jakimi są:
 - Spring Security
 - Funkcje e-mail
