@@ -115,8 +115,4 @@ public class EmailServiceImpl implements EmailService {
             return "Error while Sending Mail";
         }
     }
-
-
-
-
 }

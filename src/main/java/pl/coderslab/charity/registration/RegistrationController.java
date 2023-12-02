@@ -1,7 +1,6 @@
-package pl.coderslab.charity;
+package pl.coderslab.charity.registration;
 
 import lombok.AllArgsConstructor;
-import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,18 +10,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pl.coderslab.charity.email.EmailDetails;
 import pl.coderslab.charity.email.EmailService;
 import pl.coderslab.charity.user.User;
-import pl.coderslab.charity.user.UserRepository;
 import pl.coderslab.charity.user.UserService;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.UUID;
 
 
 @Controller
 @AllArgsConstructor
-public class RegisterController {
+public class RegistrationController {
 
     private final UserService userService;
     private final EmailService emailService;
@@ -34,6 +31,7 @@ public class RegisterController {
         return "register";
     }
 
+//TODO: registerservice
 
     @PostMapping("/register")
     public String register(@Valid User user, BindingResult bindingResult,

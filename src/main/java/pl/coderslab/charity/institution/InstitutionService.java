@@ -5,9 +5,8 @@ import java.util.List;
 public interface InstitutionService {
 
     List<Institution> findAll();
-    void save(Institution institution);
+    Institution save(Institution institution);
     Institution getById(Integer id);
-    void delete(Integer id);
-
+    void delete(Integer institutionId);
     Institution get(Integer institutionId);
 }

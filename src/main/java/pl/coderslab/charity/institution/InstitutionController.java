@@ -49,14 +49,7 @@ public class InstitutionController {
 
     @PostMapping("/institution/delete")
     public String deleteInstitution(@RequestParam Integer institutionId) {
-        List<Donation> donationsByInstitutionId = donationService.findDonationsByInstitution_Id(institutionId);
-        if (!donationsByInstitutionId.isEmpty()) {
-            for (Donation donation : donationsByInstitutionId) {
-                donationService.deleteDonation(donation);
-            }
-        } else {
-            institutionService.delete(institutionId);
-        }
+        institutionService.delete(institutionId);
         return "redirect:/admin/home#help";
     }
 }

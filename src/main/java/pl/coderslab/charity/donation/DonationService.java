@@ -8,7 +8,9 @@ public interface DonationService {
 
     List<Donation> findAll();
 
-    Integer numberOfGifts();
+    Integer numberOfDonations();
+
+    Integer numberOfBags();
 
     List<Donation> findDonationsByInstitution_Id(Integer id);
 

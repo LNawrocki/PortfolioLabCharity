@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @AllArgsConstructor
 public class EmailController {
 
-//    @Autowired
-    private EmailService emailService;
+    private final EmailService emailService;
 
     // Sending a simple Email
     @PostMapping("/sendMail")

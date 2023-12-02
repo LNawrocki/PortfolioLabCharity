@@ -22,15 +22,15 @@ public class DonationServiceImpl implements DonationService {
     }
 
     @Override
-    public Integer numberOfGifts() {
-        List<Donation> donationsList = donationRepository.findAll();
-        Integer giftsQty = 0;
-        for (
-                Donation donation : donationsList) {
-            giftsQty += donation.getQuantity();
-        }
-        return giftsQty;
+    public Integer numberOfDonations() {
+        return donationRepository.numberOfDonations();
     }
+
+    @Override
+    public Integer numberOfBags() {
+        return donationRepository.numberOfBags();
+    }
+
 
     @Override
     public List<Donation> findDonationsByInstitution_Id(Integer id) {

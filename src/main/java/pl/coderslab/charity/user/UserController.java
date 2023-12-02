@@ -20,17 +20,12 @@ public class UserController {
     private final InstitutionService institutionService;
     private final DonationService donationService;
     private final CategoryService categoryService;
-    private final UserService userService;
-
-    //TODO : pobranie nazwy użytkownika
 
     @GetMapping("/home")
     public String userHome(Model model, Principal principal){
         model.addAttribute("institutions", institutionService.findAll());
-        model.addAttribute("bags", donationService.findAll().stream().count());
-        model.addAttribute("gifts", donationService.numberOfGifts());
-
-
+        model.addAttribute("bags", donationService.numberOfBags());
+        model.addAttribute("donations", donationService.numberOfDonations());
         model.addAttribute("username", principal.getName());
         return "user-home";
     }

@@ -18,7 +18,6 @@ public class DonationController {
     private final InstitutionService institutionService;
 
 
-
     @GetMapping("/donation")
     public String donationView (Model model){
         model.addAttribute("categories", categoryService.findAll());
@@ -29,10 +28,7 @@ public class DonationController {
 
     @PostMapping("/donation")
     public String donation (Donation donation){
-        //TODO - zrobić podsumowanie w ostatnim kroku formularza weryfikacja daty aktualna lub przyszła
         donationService.save(donation);
         return "form-confirmation";
     }
-
-
 }

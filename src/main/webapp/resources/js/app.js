@@ -151,8 +151,6 @@ document.addEventListener("DOMContentLoaded", function () {
         updateForm() {
             this.$step.innerText = this.currentStep;
 
-            // TODO: Validation
-
             this.slides.forEach(slide => {
                 slide.classList.remove("active");
 
@@ -163,10 +161,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             this.$stepInstructions[0].parentElement.parentElement.hidden = this.currentStep >= 5;
             this.$step.parentElement.hidden = this.currentStep >= 5;
-
-            // TODO: get data from inputs and show them in summary
-
-            //TODO dodać info o rodzaju darów w podsumowaniu
 
             var bagsQty = document.getElementById("quantity").value;
             if (bagsQty != 0) {
@@ -229,15 +223,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     }
-
-    // TODO - Weryfikacja powtórzenia hasła na stronie - JS
-    //
-    // var haslo = document.getElementById('password').value;
-    // var potwierdzenieHasla = document.getElementById('password2').value;
-    //
-    // if (haslo !== potwierdzenieHasla) {
-    //     alert('Hasła są różne. Proszę wprowadzić takie same hasła.');
-    // }
 
     const form = document.querySelector(".form--steps");
     if (form !== null) {
